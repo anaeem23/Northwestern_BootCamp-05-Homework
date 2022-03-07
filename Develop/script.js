@@ -8,14 +8,14 @@ function setTimeBlocks() {
     var time = moment().hour(i);
     var timeBlocks = $("<div>").addClass("row");
     var timeBlocksTime = $("<div>")
-      .addClass("col-1 text-center bg-primary word-wrap")
+      .addClass("col-2 col-lg-1 text-center bg-primary word-wrap")
       .text(time.format("hA"))
       .attr("id", "Time");
     var timeBlocksInput = $('<input type="text">')
-      .addClass(`col-9 ${i}`)
+      .addClass(`col-8 col-lg-9 ${i}`)
       .text(i)
       .attr("id", `${i}-input`);
-    var timeBlocksBtn = $('<button>').addClass(`col-2 Btn`).attr("id", `${i}`);
+    var timeBlocksBtn = $('<button>').addClass(`col-2 col-lg-2 Btn`).attr("id", `${i}`);
 
     timeBlockContainer.append(timeBlocks);
     timeBlocks.append(timeBlocksTime);
