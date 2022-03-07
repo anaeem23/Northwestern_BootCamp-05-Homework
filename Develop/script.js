@@ -1,9 +1,14 @@
 var timeBlockContainer = $(".timeBlock");
+var todaysDate = $(".todays-date")
 
 
 setTimeBlocks();
 
 function setTimeBlocks() {
+
+    todaysDate.text(moment().format("dddd MMMM Do"))
+
+
   for (i = 9; i < 21; i++) {
     var time = moment().hour(i);
     var timeBlocks = $("<div>").addClass("row");
