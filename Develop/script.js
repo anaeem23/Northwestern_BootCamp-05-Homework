@@ -1,13 +1,10 @@
 var timeBlockContainer = $(".timeBlock");
-var todaysDate = $(".todays-date")
-
+var todaysDate = $(".todays-date");
 
 setTimeBlocks();
 
 function setTimeBlocks() {
-
-    todaysDate.text(moment().format("dddd MMMM Do"))
-
+  todaysDate.text(moment().format("dddd MMMM Do"));
 
   for (i = 9; i < 21; i++) {
     var time = moment().hour(i);
@@ -20,7 +17,9 @@ function setTimeBlocks() {
       .addClass(`col-8 col-lg-9 ${i}`)
       .text(i)
       .attr("id", `${i}-input`);
-    var timeBlocksBtn = $('<button>').addClass(`col-2 col-lg-2 Btn`).attr("id", `${i}`);
+    var timeBlocksBtn = $("<button>")
+      .addClass(`col-2 col-lg-2 Btn`)
+      .attr("id", `${i}`);
 
     timeBlockContainer.append(timeBlocks);
     timeBlocks.append(timeBlocksTime);
@@ -38,23 +37,27 @@ function setTimeBlocks() {
     }
   }
 
-  storage()
+  storage();
 }
 
 function storage() {
-    for (i=9;i<21;i++) {
-        $(`#${i}-input`).val(localStorage.getItem(`${i}`))
+  if (moment().hour() == 0) {
+    for (i = 9; i < 21; i++) {
+      localStorage.setItem(`${i}`, "");
     }
+  } else {
+    for (i = 9; i < 21; i++) {
+      $(`#${i}-input`).val(localStorage.getItem(`${i}`));
+    }
+  }
 }
 
 
 
 $(".Btn").on("click", function (event) {
-    var id = event.target.id;
-    for (i=9;i<21;i++) {
-        if (event.target.id == i)
-        localStorage.setItem(`${i}`, $(`#${i}-input`).val())
-    }
-
-  });
-
+  var id = event.target.id;
+  for (i = 9; i < 21; i++) {
+    if (event.target.id == i)
+      localStorage.setItem(`${i}`, $(`#${i}-input`).val());
+  }
+});
