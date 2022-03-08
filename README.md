@@ -1,18 +1,9 @@
 # 05 Third-Party APIs: Work Day Scheduler
 
-## Your Task
+## Task
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+The task was to create a simple calendar application that allows a user to save events for each hour of a standard working day. This app was to run in a browswer and feature dynamically updated HTML and CSS powered by jQuery. Moment.js was to be used as the working library to incorporate date and time features.
 
-You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
-
-## User Story
-
-```md
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
 
 ## Acceptance Criteria
 
@@ -32,58 +23,14 @@ WHEN I refresh the page
 THEN the saved events persist
 ```
 
-The following animation demonstrates the application functionality:
+## Calendar
 
-![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
+The calendar was made using Jquery and Moment.js. The app consists of a title for the page with the current date displayed and below it is the daily planner. The working hours were set from 9AM to 8PM to accomodate for Over Time work. The calender is color coded to show the past, present, and future activites yet to come. The user is allowed to fill their calender with activities and using the "Save Task" button they can save those tasks in local storage.
 
+## Submission
 
-## Grading Requirements
+The URL: https://anaeem23.github.io/Northwestern_BootCamp-05-Homework/
 
-This homework is graded based on the following criteria: 
+Example of the working app:
 
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria plus the following:
-
-  * Uses a date utility library to work with date and time
-
-### Deployment: 32%
-
-* Application deployed at live URL
-
-* Application loads with no errors
-
-* Application GitHub URL submitted
-
-* GitHub repo contains application code
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate
-
-* Application user interface style is clean and polished
-
-* Application resembles the mock-up functionality provided in the homework instructions
-
-### Repository Quality: 13%
-
-* Repository has a unique name
-
-* Repository follows best practices for file structure and naming conventions
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages
-
-* Repository contains quality README file with description, screenshot, and link to deployed application
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
-- - -
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+![GIF showcasing the apps features.](./Assets/Work-Day-Scheduler-Google-Chrome.gif)
