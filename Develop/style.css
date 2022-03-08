@@ -73,4 +73,5 @@ textarea {
 
 #Time{
   line-height: 450%;
+  border-top: solid 2px;
 }

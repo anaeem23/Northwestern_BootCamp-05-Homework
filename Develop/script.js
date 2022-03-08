@@ -10,7 +10,7 @@ function setTimeBlocks() {
     var time = moment().hour(i);
     var timeBlocks = $("<div>").addClass("row");
     var timeBlocksTime = $("<div>")
-      .addClass("col-2 col-lg-1 text-center bg-primary word-wrap")
+      .addClass("col-2 col-lg-1 text-center word-wrap")
       .text(time.format("hA"))
       .attr("id", "Time");
     var timeBlocksInput = $('<input type="text">')
@@ -19,7 +19,8 @@ function setTimeBlocks() {
       .attr("id", `${i}-input`);
     var timeBlocksBtn = $("<button>")
       .addClass(`col-2 col-lg-2 Btn`)
-      .attr("id", `${i}`);
+      .attr("id", `${i}`)
+      .text("Save Task");
 
     timeBlockContainer.append(timeBlocks);
     timeBlocks.append(timeBlocksTime);
@@ -29,11 +30,11 @@ function setTimeBlocks() {
     var currentTime = moment().hour();
 
     if (time.format("H") < currentTime) {
-      timeBlocksInput.css("background-color", "red");
+      timeBlocksInput.css("background-color", "Coral");
     } else if (time.format("H") == currentTime) {
-      timeBlocksInput.css("background-color", "green");
+      timeBlocksInput.css("background-color", "LightGreen");
     } else {
-      timeBlocksInput.css("background-color", "blue");
+      timeBlocksInput.css("background-color", "Cyan");
     }
   }
 
@@ -41,18 +42,10 @@ function setTimeBlocks() {
 }
 
 function storage() {
-  if (moment().hour() == 0) {
-    for (i = 9; i < 21; i++) {
-      localStorage.setItem(`${i}`, "");
-    }
-  } else {
-    for (i = 9; i < 21; i++) {
-      $(`#${i}-input`).val(localStorage.getItem(`${i}`));
-    }
+  for (i = 9; i < 21; i++) {
+    $(`#${i}-input`).val(localStorage.getItem(`${i}`));
   }
 }
-
-
 
 $(".Btn").on("click", function (event) {
   var id = event.target.id;
